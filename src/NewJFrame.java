@@ -304,6 +304,7 @@ public class NewJFrame extends javax.swing.JFrame {
         return imagenUmbralizada;
     }
 
+    //source of img2Mat function: https://techutils.in/blog/2016/08/02/converting-java-bufferedimage-to-opencv-mat-and-vice-versa/
     public static Mat img2Mat(BufferedImage in) {
         Mat out = new Mat(in.getHeight(), in.getWidth(), CvType.CV_8UC3);
         byte[] data = new byte[in.getWidth() * in.getHeight() * (int) out.elemSize()];
