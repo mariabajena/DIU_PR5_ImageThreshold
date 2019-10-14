@@ -3,7 +3,6 @@ import java.awt.Graphics2D;
 import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -15,9 +14,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-import org.opencv.core.MatOfByte;
 import org.opencv.highgui.HighGui;
-import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
 /*
@@ -201,9 +198,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelThresheldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelOriginalImage, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(jLabelCaptionThresheldImage, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18)
+                .addComponent(jLabelCaptionThresheldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(463, 463, 463)
@@ -252,7 +249,7 @@ public class NewJFrame extends javax.swing.JFrame {
             Image image = ii.getImage().getScaledInstance(jLabelThresheldImage.getWidth(), jLabelThresheldImage.getHeight(), Image.SCALE_SMOOTH);
             jLabelThresheldImage.setIcon(new ImageIcon(image));
 
-            jLabelCaptionThresheldImage.setText("Resultado del proceso de umbralizado");
+            jLabelCaptionThresheldImage.setText("Resultado del proceso de umbralizado con valor " + res);
         } catch (NumberFormatException e) {
             notIntegerValueIntroducedError();
         } catch (ImpossibleRangeException | NoImageOpenedException | HeadlessException e) {
